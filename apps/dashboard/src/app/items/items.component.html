@@ -1,0 +1,21 @@
+
+
+<div class="container d-flex">
+  <div class="col-6">
+    <mdv18-list
+      [data]="items$ | async"
+      [selected]="item$ | async"
+      (selectItem)="onSelectItem($event)"
+      (deleteItem)="onDeleteItem($event)"
+    ></mdv18-list>
+  </div>
+
+  <div class="col-6">
+    <mdv18-form
+      [selected]="item$ | async"
+      (saveItem)="saveItem($event)"
+      (deleteItem)="onDeleteItem($event)"
+      (resett)="reset()"
+    ></mdv18-form>
+  </div>
+</div>
